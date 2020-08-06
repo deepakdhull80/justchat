@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+{% load static %}
+<style type="text/css">
+	*{
+		margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+	}
+	div {
+    display: block;
+    }
+    body, html {
+    height: 100%;
+    font-family: Segoe UI;
+    
+	}
+	.top{
+		background-color: rgba(0,0,255,0.5);
+		/*width: 100%;*/
+		margin-top:0px;
+		/*padding: 10px;*/
+		padding-bottom: 30px;
+	}
+	.sd{
+		padding: 25px;
+		font-size: 20px;
+		color: white;
+		
+	}
+	
+	.but{
+		margin-top: -12px;
+		text-decoration: none;
+		color: white;
+		background-color: black;
+		border-radius: 25px;
+		padding: 10px 20px 10px 20px;
+		transition-duration: 0.5s;
+		/*margin-left: 60%;*/
+		border-width: 3px;
+		float: right;
+		font-size: 20px;
+	}
+	.but:hover{
+		content: '\00bb';
+		font-size: 25px;
+		background-color: #f6b93b;
+		color: black;
+
+	}
+
+	.block{
+		/*background-color: rgba(0,0,0,1);*/
+		/*width: auto;*/
+		/*height: auto;*/
+	}
+	.inner{
+		/*background-color: rgba(0,200,255,0.2);*/
+		/*width: 50%;*/
+		/*margin-left: 20%;*/
+		padding: 40px;
+		/*text-align: center;*/
+	}
+	.tt{
+		/*border-color: white;*/
+		text-align: center;
+	}
+	.headcol{
+		font-size: 23px;
+		width: 300px;
+		padding: 10px 20px 10px 20px;
+		background-color: black;
+		color: white;
+		/*margin: 0px;*/
+		border-style: none;
+		box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+		border-radius: 2px;
+	}
+	.col{
+		padding: 10px 0px 10px 0px;
+	}
+	.row{
+		
+		box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+		border-radius: 2px;
+		
+	}
+</style>
+<body>
+	<div class="top">
+		<div style="background-color: white; padding-right: 5px;">  </div>
+		<div class="sd"> Fetched {{number}} maximum occur words. <a href="/" class="but"><-</a></div>
+
+	</div>
+	<div class="block">
+		<div class="inner" align="center">
+		<table class=" tt" cellspacing="0" border="0">
+			<tr>
+				<td class="headcol">Word</td>
+				<td class="headcol">Frequency</td>
+			</tr>
+
+		{% for s,v in result %}
+			
+				<tr class="row">				
+					<td class="col word">{{ s }}</td>
+					<td class="col count">{{ v }}</td>
+				</tr>
+		{% endfor %}
+
+		</table>
+		</div>
+	</div>
+</body>
+</html>
